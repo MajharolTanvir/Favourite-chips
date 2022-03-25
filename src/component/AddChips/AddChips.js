@@ -8,11 +8,11 @@ const AddChips = ({ chips }) => {
             <div>
                 {
                     chips.map(chip => <div key={(chip.id)}>
-                        <img src={chip.picture} alt="" />
                         <h6>Name: {chip.name}</h6>
                         <p>Price: {chip.price}</p>
                     </div>)
                 }
+                
             </div>
         </div>
     );
