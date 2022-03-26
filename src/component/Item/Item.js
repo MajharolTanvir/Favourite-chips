@@ -9,7 +9,7 @@ const Item = ({ item, addChips }) => {
     return (
         <div>
             <div className="card my-3 card-info">
-                <img src={picture} className="card-img-top" alt="..." />
+                <img src={picture} className="card-img-top p-2" alt="..." />
                 <div className="card-body">
                     <h5 key={id} className="card-title">Name: {name}</h5>
                     <p className="card-text">Price: {price}</p>

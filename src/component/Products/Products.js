@@ -31,8 +31,6 @@ const Products = () => {
     }
 
     const findOne = () => {
-        // const random = Math.floor(Math.random() * months.length);
-        // console.log(random, months[random]);
         const randomChips = Math.round(Math.random() * chips.length)
         setChip(chips[randomChips].name);
         
@@ -42,7 +40,7 @@ const Products = () => {
         <div>
             <div className="row m-0">
                 <div className="col-12 col-sm-12 col-md-9 col-lg-9">
-                    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3">
                         {
                             products.map(item => <Item
                                 key={item.id}
