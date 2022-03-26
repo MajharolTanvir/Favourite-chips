@@ -1,18 +1,20 @@
 import React from 'react';
+import './AddChips.css'
 
-const AddChips = ({ chips }) => {
-    console.log(chips);
+const AddChips = ({ chips, find, clear }) => {
+
     return (
         <div>
             <h5>Check your luck</h5>
-            <div>
+            <div className='card-box'>
                 {
                     chips.map(chip => <div key={(chip.id)}>
-                        <h6>Name: {chip.name}</h6>
-                        <p>Price: {chip.price}</p>
+                        <h6>Name: {chip.name}
+                        </h6>
                     </div>)
                 }
-                
+                <button className='w-100 mb-3 py-1 border-0 rounded-3 bg-info' onClick={() => find()} >Find one</button>
+                <button className='w-100 mb-3 py-1 border-0 rounded-3 bg-danger' onClick={() => clear()}>Chose again</button>
             </div>
         </div>
     );

@@ -1,6 +1,6 @@
-# Check your lucky chips
+# Chose your favourite chips
 
-This the site link [Favourite chips](https://github.com/facebook/create-react-app).
+This the site link [Check your luck](https://chose-chips.netlify.app/).
 
 ## Available Scripts
 
