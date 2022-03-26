@@ -7,6 +7,7 @@ import './Product.css'
 const Products = () => {
     const [products, setProducts] = useState([])
     const [chips, setChips] = useState([])
+    const [chip, setChip] = useState([])
 
 
     useEffect(() => {
@@ -17,8 +18,6 @@ const Products = () => {
 
     const addChips = (item) => {
         const newChips = [...chips, item]
-
-
         if (newChips.length > 4) {
             alert('Chose only 4 items')
         }
@@ -28,11 +27,14 @@ const Products = () => {
 
     const clearData = () => {
         setChips([])
-
+        setChip([])
     }
+
     const findOne = () => {
         // const random = Math.floor(Math.random() * months.length);
         // console.log(random, months[random]);
+        const randomChips = Math.round(Math.random() * chips.length)
+        setChip(chips[randomChips].name);
         
     }
 
@@ -53,6 +55,7 @@ const Products = () => {
                 <div className="group-card col-lg-3 text-center">
                     <AddChips chips={chips}
                         find={findOne}
+                        chip={chip}
                         clear={clearData} />
                 </div>
             </div>

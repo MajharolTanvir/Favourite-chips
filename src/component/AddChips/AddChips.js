@@ -1,7 +1,7 @@
 import React from 'react';
 import './AddChips.css'
 
-const AddChips = ({ chips, find, clear }) => {
+const AddChips = ({ chips, find, clear, chip }) => {
 
     return (
         <div>
@@ -14,6 +14,7 @@ const AddChips = ({ chips, find, clear }) => {
                     </div>)
                 }
                 <button className='w-100 mb-3 py-1 border-0 rounded-3 bg-info' onClick={() => find()} >Find one</button>
+                <h6>Name: {chip}</h6>
                 <button className='w-100 mb-3 py-1 border-0 rounded-3 bg-danger' onClick={() => clear()}>Chose again</button>
             </div>
         </div>

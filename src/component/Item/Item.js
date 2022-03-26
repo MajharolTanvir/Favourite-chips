@@ -14,8 +14,8 @@ const Item = ({ item, addChips }) => {
                     <h5 key={id} className="card-title">Name: {name}</h5>
                     <p className="card-text">Price: {price}</p>
                 </div>
-                <div className="card-footer bg-warning rounded-3">
-                    <button onClick={() => addChips(item)} className='w-100 border-0 bg-warning text-white'>Add chips<FontAwesomeIcon className='mx-2' icon={faShoppingCart}></FontAwesomeIcon></button>
+                <div className="card-footer p-0 bg-warning ">
+                    <button onClick={() => addChips(item)} className='w-100 border-0 bg-warning text-white rounded-3 py-2'>Add chips<FontAwesomeIcon className='mx-2' icon={faShoppingCart}></FontAwesomeIcon></button>
                 </div>
             </div>
         </div>
