@@ -2,7 +2,7 @@ import React from 'react';
 
 const Question = () => {
     return (
-        <div>
+        <div className='container mb-5 shadow-lg py-3'>
             <div className="accordion" id="accordionExample">
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">

@@ -6,12 +6,12 @@ import './AddChips.css'
 const AddChips = ({ chips, find, clear, chip }) => {
 
     return (
-        <div className='card-Structure'>
+        <div>
             <h5 className='mb-4'>Check your luck</h5>
             {
                 chips.map(chip => <div key={(chip.id)}>
                     <div className="row mb-2">
-                        <div className="col-3 col-sm-3 sol-md-3 col-lg-3 Card-info">
+                        <div className="col-3 col-sm-3 sol-md-3 col-lg-3 card-Structure">
                             <img src={chip.picture} alt="" />
                         </div>
                         <div className="col-7 col-sm-7 col-md-7 col-lg-7">
