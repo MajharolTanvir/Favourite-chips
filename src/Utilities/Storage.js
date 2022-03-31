@@ -25,11 +25,12 @@ const getStoredData = () => {
 
 // Remove item for local storage
 const removeData = item => {
+    console.log(item);
     const storedCard = localStorage.getItem('addToCard');
     if (storedCard) {
-        const storedSection = JSON.parse('addToCard')
-        console.log(storedSection);
-        delete storedSection[item];
+        const storedSection = JSON.parse(storedCard)
+        if (item in storedSection)
+            delete storedSection[item];
         localStorage.setItem('addToCard', JSON.stringify(storedSection));
     }
 }

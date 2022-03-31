@@ -43,7 +43,7 @@ const Products = () => {
         addToStored(item.name);
     }
     const removeChips = (item) => {
-        removeData(item)
+        removeData(item.name)
     }
 
     const clearData = () => {
