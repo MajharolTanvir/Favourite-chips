@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { addToStored, getStoredData, removeData } from '../../Utilities/Storage';
 import AddChips from '../AddChips/AddChips';
 import Item from '../Item/Item';
 import './Product.css'
@@ -16,13 +17,33 @@ const Products = () => {
             .then(data => setProducts(data))
     }, [])
 
+    useEffect(() => {
+        const storedOrder = getStoredData()
+        const saveOrder = [];
+
+        for (const name in storedOrder) {
+            const addedChips = products.find(product => product.name === name);
+            if (addedChips) {
+                const quantity = storedOrder[name]
+                addedChips.quantity = quantity;
+                console.log(addedChips);
+                saveOrder.push(addedChips);
+            }
+        }
+        setChips(saveOrder);
+
+    }, [products]);
+
     const addChips = (item) => {
         const newChips = [...chips, item]
         if (newChips.length > 4) {
             alert('Chose only 4 items')
         }
-        setChips(newChips)
-
+        setChips(newChips);
+        addToStored(item.name);
+    }
+    const removeChips = (item) => {
+        removeData(item)
     }
 
     const clearData = () => {
@@ -35,6 +56,8 @@ const Products = () => {
         setChip(chips[randomChips].name);
         
     }
+
+
 
     return (
         <div className='container mb-5'>
@@ -54,7 +77,8 @@ const Products = () => {
                     <AddChips chips={chips}
                         find={findOne}
                         chip={chip}
-                        clear={clearData} />
+                        clear={clearData}
+                        removeChips={removeChips} />
                 </div>
             </div>
         </div>

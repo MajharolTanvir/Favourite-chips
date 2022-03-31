@@ -3,7 +3,7 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import React from 'react';
 import './AddChips.css'
 
-const AddChips = ({ chips, find, clear, chip }) => {
+const AddChips = ({ chips, find, clear, chip, removeChips }) => {
 
     return (
         <div>
@@ -18,7 +18,7 @@ const AddChips = ({ chips, find, clear, chip }) => {
                             <p className=''>{chip.name}</p>
                         </div>
                         <div className="col-2 col-sm-2 col-md-2 col-lg-2">
-                            <FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon>
+                            <FontAwesomeIcon onClick={() => removeChips(chip)} icon={faTrashCan}></FontAwesomeIcon>
                         </div>
                     </div>
                 </div>)
